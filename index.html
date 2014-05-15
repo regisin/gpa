@@ -1,0 +1,138 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<table id="gpa-table">
+		<caption>Tabela de notas</caption>
+		<thead>
+			<tr>
+				<th><button id="gpa-add" type="button">+</button></th>
+				<th>Matéria (opcional)</th>
+				<th>Nota *</th>
+				<th>Créditos (horas) *</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='gpa-tr'>
+				<td></td>
+				<td><input type='text' name='gpa-subject' /></td>
+				<td><input type='text' name='gpa-grade' value='0' /></td>
+				<td><input type='text' name='gpa-ch' value='1' /></td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- Tabela de input -->
+	<form id="conversion-form"
+		action="https://www.rdstation.com.br/api/1.2/conversions"
+		method="POST">
+		<input type="hidden" name="token_rdstation"
+			value="13957fd58519acb107509bce56a18a2b" /> <input type="hidden"
+			name="identificador" value="calculadora gpa" /> <label>E-mail:*</label>
+		<input class="required email" type="text" name="email" /> <label>Nome:*</label>
+		<input class="required" type="text" name="nome" /> <label><span
+			id="math_expression">3 + 7 = ?</span></label> <input type="text"
+			name="captcha" class="math required" /> <input type="submit"
+			value="Calcular" id="modalSubmit" />
+
+	</form>
+	<!-- Lead form -->
+
+
+
+
+
+	<table id="gpa-reference" style="display: none;">
+		<caption>Tabela de referência</caption>
+		<thead>
+			<tr>
+				<th>Conceito</th>
+				<th>Pontuação</th>
+				<th>Notas min</th>
+				<th>Nota max</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A</td>
+				<td>4</td>
+				<td>>=90</td>
+				<td>100</td>
+			</tr>
+			<tr>
+				<td>B</td>
+				<td>3</td>
+				<td>>=70</td>
+				<td>90</td>
+			</tr>
+			<tr>
+				<td>C</td>
+				<td>2</td>
+				<td>>=50</td>
+				<td>70</td>
+			</tr>
+			<tr>
+				<td>D</td>
+				<td>1</td>
+				<td>>=30</td>
+				<td>50</td>
+			</tr>
+			<tr>
+				<td>E</td>
+				<td>0</td>
+				<td>>=0</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<td>F</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- Referência -->
+
+
+
+	<table id="gpa-summary" style="display: none;">
+		<caption>Resumo</caption>
+		<thead>
+			<tr>
+				<th>Carga horária total</th>
+				<th>GPA</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<!-- Resumo -->
+	<table id="gpa-detail" style="display: none;">
+		<caption>Detalhado</caption>
+		<thead>
+			<tr>
+				<th>Matéria</th>
+				<th>Pontuação</th>
+				<th>Carga horária * Pontuação</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<!-- Detalhamento -->
+
+
+
+	<script type="text/javascript"
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="//rdstation-static.s3.amazonaws.com/js/jquery.validate/1.9/jquery.validate.min.js"></script>
+	<script type="text/javascript"
+		src="//rdstation-static.s3.amazonaws.com/js/jquery.form/2.02/jquery.form.js"></script>
+	<script type="text/javascript"
+		src="//rdstation-static.s3.amazonaws.com/js/rd/1.2/rdlps.min.js"></script>
+	<script type="text/javascript"
+		src="//rdstation-static.s3.amazonaws.com/js/rd/1.2/rdlps-autofill.min.js"></script>
+	<script type="text/javascript" src="./GPA.js"></script>
+</body>
+</html>
