@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="./GPA.css" />
 </head>
 <body>
 	<table id="gpa-table">
@@ -14,7 +15,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='gpa-tr'>
+			<tr>
 				<td></td>
 				<td><input type='text' name='gpa-subject' /></td>
 				<td><input type='text' name='gpa-grade' value='0' /></td>
@@ -23,6 +24,7 @@
 		</tbody>
 	</table>
 	<!-- Tabela de input -->
+
 	<form id="conversion-form"
 		action="https://www.rdstation.com.br/api/1.2/conversions"
 		method="POST">
@@ -37,10 +39,6 @@
 
 	</form>
 	<!-- Lead form -->
-
-
-
-
 
 	<table id="gpa-reference" style="display: none;">
 		<caption>Tabela de referência</caption>
@@ -78,22 +76,14 @@
 				<td>50</td>
 			</tr>
 			<tr>
-				<td>E</td>
-				<td>0</td>
-				<td>>=0</td>
-				<td>30</td>
-			</tr>
-			<tr>
 				<td>F</td>
 				<td>0</td>
 				<td>0</td>
-				<td>0</td>
+				<td>30</td>
 			</tr>
 		</tbody>
 	</table>
 	<!-- Referência -->
-
-
 
 	<table id="gpa-summary" style="display: none;">
 		<caption>Resumo</caption>
@@ -120,8 +110,6 @@
 		</tbody>
 	</table>
 	<!-- Detalhamento -->
-
-
 
 	<script type="text/javascript"
 		src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>

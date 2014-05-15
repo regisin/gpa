@@ -1,5 +1,4 @@
 $('#gpa-add').click(Add)
-$('#modalSubmit').click(Calc)
 function Add() {
 	var row = "<tr><td><button type='button'>-</button></td>"
 			+ "<td><input type='text'/></td>"
@@ -22,26 +21,14 @@ function Calc() {
 	$("input[name='gpa-grade']").each(function(index, element) {
 		// element == this
 		var grade = parseFloat($(this).val());
-		if (grade <= 100 && grade > 90) {
-			usGrades.push(4);
-		} else if (grade <= 90 && grade > 70) {
-			usGrades.push(3);
-		} else if (grade <= 70 && grade > 50) {
-			usGrades.push(2);
-		} else if (grade <= 50 && grade > 30) {
-			usGrades.push(1);
-		} else if (grade <= 30 && grade >= 0) {
-			usGrades.push(0);
-		}
+		usGrades.push(convert(grade));
 	});
-
 	$("input[name='gpa-ch']").each(function(index, element) {
 		var ch = parseInt($(this).val());
 		var m = usGrades[index] * ch;
 		gradesXch.push(m);
 		sumCh += ch;
 	});
-
 	for (var i = 0; i < gradesXch.length; i++) {
 		sumM += gradesXch[i];
 	}
@@ -50,9 +37,9 @@ function Calc() {
 	// Resumo
 	var row = "<tr><td>" + sumCh + "</td><td>" + gpa + "</td></tr>";
 	$('#gpa-summary tbody').append(row);
-	
+
 	// Detalhamento
-	/*$("input[name='gpa-subject']").each(
+	$("input[name='gpa-subject']").each(
 			function(index, element) {
 				var subject = $(this).val();
 				var grade = usGrades[index];
@@ -60,14 +47,28 @@ function Calc() {
 				var row = "<tr><td>" + subject + "</td><td>" + grade
 						+ "</td><td>" + wl + "</td></tr>";
 				$('#gpa-detail tbody').append(row);
-			});*/
+			});
 
-	// Display result
-	//$("#gpa-reference").css("display", "table");
+	// Display results
+	$("#gpa-reference").css("display", "table");
 	$("#gpa-summary").css("display", "table");
-	//$("#gpa-detail").css("display", "table");
+	$("#gpa-detail").css("display", "table");
 }
-
+function convert(grade) {
+	var usGrade = 0;
+	if (grade <= 100 && grade > 90) {
+		usGrade = 4;
+	} else if (grade <= 90 && grade > 70) {
+		usGrades = 3;
+	} else if (grade <= 70 && grade > 50) {
+		usGrades = 2;
+	} else if (grade <= 50 && grade > 30) {
+		usGrades = 1;
+	} else if (grade <= 30 && grade >= 0) {
+		usGrade = 0;
+	}
+	return usGrade;
+}
 // RD
 var origConversionSuccess = conversionSuccess;
 conversionSuccess = function(resp) {

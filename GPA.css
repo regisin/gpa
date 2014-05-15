@@ -1,29 +1,12 @@
-#gpa-table {
-	
+body {
+	background-color: #fff;
 }
-#gpa-add {
-	
+table {
+	border: 1px solid #000;
 }
-#gpa-calc{
-	
+table > tr {
+	border: 1px solid #000;
 }
-.glyphicon{}
-.glyphicon-plus{}
-.glyphicon-minus {}
-.gpa-tr{}
-.form-control{}
-thead {
-	
-}
-tr{
-	
-}
-th {
-	
-}
-tbody {
-	
-}
-input {
-	
+table tbody td {
+	border: 1px solid #000;
 }
