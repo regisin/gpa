@@ -49,7 +49,7 @@ function Calc() {
 
 	// Resumo
 	var row = "<tr><td>" + sumCh + "</td><td>" + gpa + "</td></tr>";
-	$('#gpa-summary tbody').before(row);
+	$('#gpa-summary tbody').append(row);
 	
 	// Detalhamento
 	/*$("input[name='gpa-subject']").each(
