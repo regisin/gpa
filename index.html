@@ -2,24 +2,25 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="./GPA.css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
 <body>
-	<table id="gpa-table">
+	<table id="gpa-table" class="table">
 		<caption>Tabela de notas</caption>
 		<thead>
 			<tr>
-				<th><button id="gpa-add" type="button">+</button></th>
-				<th>Mat√©ria (opcional)</th>
+				<th><button id="gpa-add" type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button></th>
+				<th>Matéria (opcional)</th>
 				<th>Nota *</th>
-				<th>Cr√©ditos (horas) *</th>
+				<th>Créditos (horas) *</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td></td>
-				<td><input type='text' name='gpa-subject' /></td>
-				<td><input type='text' name='gpa-grade' value='0' /></td>
-				<td><input type='text' name='gpa-ch' value='1' /></td>
+				<td><input type='text' name='gpa-subject' class="form-control"/></td>
+				<td><input type='text' name='gpa-grade' value='0' class="form-control"/></td>
+				<td><input type='text' name='gpa-ch' value='1' class="form-control"/></td>
 			</tr>
 		</tbody>
 	</table>
@@ -31,17 +32,17 @@
 		<input type="hidden" name="token_rdstation"
 			value="13957fd58519acb107509bce56a18a2b" /> <input type="hidden"
 			name="identificador" value="calculadora gpa" /> <label>E-mail:*</label>
-		<input class="required email" type="text" name="email" /> <label>Nome:*</label>
-		<input class="required" type="text" name="nome" /> <label><span
+		<input class="required email form-control" type="text" name="email" /> <label>Nome:*</label>
+		<input class="required form-control" type="text" name="nome" /> <label><span
 			id="math_expression">3 + 7 = ?</span></label> <input type="text"
-			name="captcha" class="math required" /> <input type="submit"
-			value="Calcular" id="modalSubmit" />
+			name="captcha" class="math required form-control" /> <input type="submit"
+			value="Calcular" id="modalSubmit" class="btn btn-default"/>
 
 	</form>
 	<!-- Lead form -->
 
-	<table id="gpa-reference" style="display: none;">
-		<caption>Tabela de refer√™ncia</caption>
+	<table id="gpa-reference" style="display: none;" class="table">
+		<caption>Tabela de referência</caption>
 		<thead>
 			<tr>
 				<th>Conceito</th>
@@ -85,11 +86,11 @@
 	</table>
 	<!-- Refer√™ncia -->
 
-	<table id="gpa-summary" style="display: none;">
+	<table id="gpa-summary" style="display: none;" class="table">
 		<caption>Resumo</caption>
 		<thead>
 			<tr>
-				<th>Carga hor√°ria total</th>
+				<th>Carga horária total</th>
 				<th>GPA</th>
 			</tr>
 		</thead>
@@ -97,8 +98,8 @@
 		</tbody>
 	</table>
 	<!-- Resumo -->
-	<table id="gpa-detail" style="display: none;">
-		<caption>Detalhado</caption>
+	<table id="gpa-detail" style="display: none;" class="table">
+		<caption>Detalhamento</caption>
 		<thead>
 			<tr>
 				<th>Mat√©ria</th>

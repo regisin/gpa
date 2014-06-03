@@ -1,9 +1,9 @@
 $('#gpa-add').click(Add)
 function Add() {
-	var row = "<tr><td><button type='button'>-</button></td>"
-			+ "<td><input type='text'/></td>"
-			+ "<td><input type='text' name='gpa-grade' value='0' /></td>"
-			+ "<td><input type='text' name='gpa-ch' value='1' /></td>"
+	var row = "<tr><td><button type='button' class='gpa-del btn btn-danger'><span class='glyphicon glyphicon-minus'></span></button></td>"
+			+ "<td><input type='text' name='gpa-subject' class='form-control'/></td>"
+			+ "<td><input type='text' name='gpa-grade' value='0' class='form-control'/></td>"
+			+ "<td><input type='text' name='gpa-ch' value='1' class='form-control'/></td>"
 			+ "</tr>";
 
 	$('#gpa-table tbody tr:first').before(row);
@@ -14,6 +14,7 @@ function Del() {
 	par.remove();
 }
 function Calc() {
+	clearResults();
 	var usGrades = [];
 	var gradesXch = [];
 	var sumCh = 0;
@@ -54,16 +55,20 @@ function Calc() {
 	$("#gpa-summary").css("display", "table");
 	$("#gpa-detail").css("display", "table");
 }
+function clearResults() {
+	$('#gpa-summary tbody').empty();
+	$('#gpa-detail tbody').empty();
+}
 function convert(grade) {
 	var usGrade = 0;
 	if (grade <= 100 && grade > 90) {
 		usGrade = 4;
 	} else if (grade <= 90 && grade > 70) {
-		usGrades = 3;
+		usGrade = 3;
 	} else if (grade <= 70 && grade > 50) {
-		usGrades = 2;
+		usGrade = 2;
 	} else if (grade <= 50 && grade > 30) {
-		usGrades = 1;
+		usGrade = 1;
 	} else if (grade <= 30 && grade >= 0) {
 		usGrade = 0;
 	}
