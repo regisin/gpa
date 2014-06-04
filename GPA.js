@@ -61,15 +61,15 @@ function clearResults() {
 }
 function convert(grade) {
 	var usGrade = 0;
-	if (grade <= 100 && grade > 90) {
+	if (grade <= 10 && grade >= 9) {
 		usGrade = 4;
-	} else if (grade <= 90 && grade > 70) {
+	} else if (grade < 9 && grade >= 7) {
 		usGrade = 3;
-	} else if (grade <= 70 && grade > 50) {
+	} else if (grade < 7 && grade >= 5) {
 		usGrade = 2;
-	} else if (grade <= 50 && grade > 30) {
+	} else if (grade < 5 && grade >= 3) {
 		usGrade = 1;
-	} else if (grade <= 30 && grade >= 0) {
+	} else if (grade < 3 && grade >= 0) {
 		usGrade = 0;
 	}
 	return usGrade;
