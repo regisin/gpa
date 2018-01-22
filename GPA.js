@@ -1,4 +1,7 @@
 $('#gpa-add').click(Add)
+$('#gpa-calc').click(Calc)
+$('#gpa-clear').click(clearResults)
+
 function Add() {
 	var row = "<tr><td><button type='button' class='gpa-del btn btn-danger'><span class='glyphicon glyphicon-minus'></span></button></td>"
 			+ "<td><input type='text' name='gpa-subject' class='form-control'/></td>"
@@ -51,13 +54,16 @@ function Calc() {
 			});
 
 	// Display results
-	$("#gpa-reference").css("display", "table");
+	$("#gpa-reference").css("display", "block");
 	$("#gpa-summary").css("display", "table");
 	$("#gpa-detail").css("display", "table");
 }
 function clearResults() {
 	$('#gpa-summary tbody').empty();
 	$('#gpa-detail tbody').empty();
+	$("#gpa-summary").css("display", "none");
+	$("#gpa-detail").css("display", "none");
+	$("#gpa-reference").css("display", "none");
 }
 function convert(grade) {
 	var usGrade = 0;
@@ -74,13 +80,4 @@ function convert(grade) {
 	}
 	return usGrade;
 }
-// RD
-var origConversionSuccess = conversionSuccess;
-conversionSuccess = function(resp) {
-	origConversionSuccess(resp);
-	try {
-		_gaq.push([ '_trackPageview', '/calculadora-gpa/conversao' ]);
-	} catch (err) {
-	}
-	Calc();
-}
+clearResults();
