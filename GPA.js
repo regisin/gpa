@@ -55,8 +55,8 @@ function Calc() {
 
 	// Display results
 	$("#gpa-reference").css("display", "block");
-	$("#gpa-summary").css("display", "table");
-	$("#gpa-detail").css("display", "table");
+	$("#gpa-summary").css("display", "block");
+	$("#gpa-detail").css("display", "block");
 }
 function clearResults() {
 	$('#gpa-summary tbody').empty();
