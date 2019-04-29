@@ -14,7 +14,7 @@ If you want to download and run it locally:
     cd path/to/gpacalc
     git clone https://github.com/regisin/gpa
 
-Then in your browser, open the url `file:///home/pregis/workspace/gpa/index.html`.
+Then in your browser, open the url `file:///path/to/gpacalc/gpa/index.html`.
 
 # Disclaimer
 
